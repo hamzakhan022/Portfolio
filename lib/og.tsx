@@ -33,8 +33,8 @@ export async function renderOg({ eyebrow, title, subtitle }: OgProps) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#F6F3EC',
-          color: '#16140F',
+          background: '#F4EDE0',
+          color: '#14213D',
           padding: '72px 80px',
           fontFamily: 'Plex Sans',
         }}
@@ -46,9 +46,9 @@ export async function renderOg({ eyebrow, title, subtitle }: OgProps) {
             fontFamily: 'Plex Mono',
             fontSize: 22,
             letterSpacing: 2,
-            color: '#6B665C',
+            color: '#5E6475',
             textTransform: 'uppercase',
-            borderBottom: '1px solid #DDD6C8',
+            borderBottom: '1px solid #DDD3C2',
             paddingBottom: 24,
           }}
         >
@@ -60,8 +60,8 @@ export async function renderOg({ eyebrow, title, subtitle }: OgProps) {
           <div style={{ fontFamily: 'Fraunces', fontSize: title.length > 22 ? 68 : 84, lineHeight: 1.05, letterSpacing: -1.5 }}>
             {title}
           </div>
-          <div style={{ width: 120, height: 6, background: '#D9480F', marginTop: 36, marginBottom: 32 }} />
-          <div style={{ fontSize: 32, lineHeight: 1.35, color: '#3F3B33', maxWidth: 940 }}>{subtitle}</div>
+          <div style={{ width: 120, height: 6, background: '#FF6B5B', marginTop: 36, marginBottom: 32 }} />
+          <div style={{ fontSize: 32, lineHeight: 1.35, color: '#2E3A57', maxWidth: 940 }}>{subtitle}</div>
         </div>
 
         <div
@@ -70,8 +70,8 @@ export async function renderOg({ eyebrow, title, subtitle }: OgProps) {
             justifyContent: 'space-between',
             fontFamily: 'Plex Mono',
             fontSize: 22,
-            color: '#6B665C',
-            borderTop: '1px solid #DDD6C8',
+            color: '#5E6475',
+            borderTop: '1px solid #DDD3C2',
             paddingTop: 24,
           }}
         >

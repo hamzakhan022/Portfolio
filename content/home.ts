@@ -9,6 +9,16 @@ export const hero = {
     'Reporting, accounting, POS and distribution systems for real businesses, plus the automation that runs them while nobody’s watching.',
 };
 
+/** "At a glance" ledger shown to the right of the hero on wide screens. */
+export const glance: { term: string; detail: string }[] = [
+  { term: 'Role', detail: 'Full-Stack Engineer, MCA Global' },
+  { term: 'Built', detail: 'MCA Orbit · MCA Pro · mcaaudit' },
+  { term: 'Own product', detail: 'RestoCore, in pilot' },
+  { term: 'Freelance', detail: 'Pharma distribution system' },
+  { term: 'Stack', detail: 'Next.js · TypeScript · Python · PostgreSQL' },
+  { term: 'Based', detail: 'Islamabad · remote with a UK firm' },
+];
+
 export interface ProofItem {
   /** Rendered as-is for screen readers and when JS is off. */
   display: string;
