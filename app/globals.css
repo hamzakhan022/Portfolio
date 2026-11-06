@@ -5,29 +5,27 @@
 :root {
   color-scheme: light;
 
-  /* Colour: light (navy / cream / coral) */
-  --paper: #f4ede0;
+  /* Colour: light */
+  --paper: #f6f3ec;
   --surface: #ffffff;
-  --ink: #14213d;
-  --muted: #5e6475;
-  --rule: #ddd3c2;
-  --accent: #ff6b5b;        /* coral: fills, rules, chart highlights, accents on dark */
-  --accent-text: #b23a2a;   /* links and small text on cream (5.1:1) */
-  --accent-num: #b23a2a;    /* big numbers: coral fails 3:1 on cream, so light mode uses accent-text */
-  --on-accent: #14213d;     /* text on coral fills */
-  --live: #276b43;
-  --live-text: #276b43;
+  --ink: #16140f;
+  --muted: #6b665c;
+  --rule: #ddd6c8;
+  --accent: #d9480f;        /* fills, big numbers, chart highlights */
+  --accent-text: #b93e0d;   /* small text and links (AA on paper + surface) */
+  --live: #2f7d4f;
+  --live-text: #2f7d4f;
   --pilot: #c98a0b;
   --pilot-text: #8a5a00;
-  --placeholder: #ebe3d4;
-  --placeholder-line: #ddd3c2;
+  --placeholder: #ece7dc;
+  --placeholder-line: #dcd4c4;
 
-  /* "How I work" band: navy in both themes */
-  --band-bg: #14213d;
-  --band-ink: #f4ede0;
-  --band-muted: #aeb4c4;
-  --band-rule: #2a3757;
-  --band-accent: #ff6b5b;
+  /* Dark band ("How I work") */
+  --band-bg: #16140f;
+  --band-ink: #f6f3ec;
+  --band-muted: #aaa497;
+  --band-rule: #34312a;
+  --band-accent: #ff6b2c;
 
   /* Type */
   --font-display: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
@@ -56,11 +54,11 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4rem;
-  --section-y: clamp(3rem, 2.2rem + 3.5vw, 5.5rem);
+  --section-y: clamp(3.5rem, 2.5rem + 5vw, 7rem);
 
   /* Layout */
-  --gutter: clamp(1rem, 0.5rem + 2vw, 2rem);
-  --max: 1360px;
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3rem);
+  --max: 1280px;
   --col-gap: clamp(1rem, 0.6rem + 1.5vw, 2rem);
   --header-h: 4rem;
 
@@ -77,52 +75,48 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --paper: #0e1730;
-    --surface: #16213f;
-    --ink: #e9e2d4;
-    --muted: #9aa3b8;
-    --rule: #26304d;
-    --accent: #ff8a7d;
-    --accent-text: #ff8a7d;
-    --accent-num: #ff8a7d;
-    --on-accent: #14213d;
+    --paper: #12110e;
+    --surface: #1b1a16;
+    --ink: #ede8dd;
+    --muted: #9c968a;
+    --rule: #2e2b25;
+    --accent: #ff6b2c;
+    --accent-text: #ff6b2c;
     --live: #4caf7a;
     --live-text: #4caf7a;
     --pilot: #c98a0b;
     --pilot-text: #e3aa45;
-    --placeholder: #1a2647;
-    --placeholder-line: #26304d;
-    --band-bg: #14213d;
-    --band-ink: #f4ede0;
-    --band-muted: #aeb4c4;
-    --band-rule: #2a3757;
-    --band-accent: #ff8a7d;
+    --placeholder: #201e1a;
+    --placeholder-line: #2e2b25;
+    --band-bg: #1b1a16;
+    --band-ink: #ede8dd;
+    --band-muted: #9c968a;
+    --band-rule: #2e2b25;
+    --band-accent: #ff6b2c;
   }
 }
 
 /* Dark: explicit toggle */
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #0e1730;
-  --surface: #16213f;
-  --ink: #e9e2d4;
-  --muted: #9aa3b8;
-  --rule: #26304d;
-  --accent: #ff8a7d;
-  --accent-text: #ff8a7d;
-  --accent-num: #ff8a7d;
-  --on-accent: #14213d;
+  --paper: #12110e;
+  --surface: #1b1a16;
+  --ink: #ede8dd;
+  --muted: #9c968a;
+  --rule: #2e2b25;
+  --accent: #ff6b2c;
+  --accent-text: #ff6b2c;
   --live: #4caf7a;
   --live-text: #4caf7a;
   --pilot: #c98a0b;
   --pilot-text: #e3aa45;
-  --placeholder: #1a2647;
-  --placeholder-line: #26304d;
-  --band-bg: #14213d;
-  --band-ink: #f4ede0;
-  --band-muted: #aeb4c4;
-  --band-rule: #2a3757;
-  --band-accent: #ff8a7d;
+  --placeholder: #201e1a;
+  --placeholder-line: #2e2b25;
+  --band-bg: #1b1a16;
+  --band-ink: #ede8dd;
+  --band-muted: #9c968a;
+  --band-rule: #2e2b25;
+  --band-accent: #ff6b2c;
 }
 
 /* ==========================================================================
@@ -207,7 +201,7 @@ a:hover {
 
 ::selection {
   background: var(--accent);
-  color: var(--on-accent);
+  color: #fff;
 }
 
 .sr-only {
@@ -508,9 +502,9 @@ a:hover {
 }
 
 .btn--solid:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
+  background: var(--accent-text);
+  border-color: var(--accent-text);
+  color: #fff;
 }
 
 .btn--outline {
@@ -613,11 +607,7 @@ a:hover {
    ========================================================================== */
 
 .hero {
-  padding-block: clamp(2rem, 1.25rem + 3vw, 4.5rem) clamp(2.5rem, 1.5rem + 3vw, 4rem);
-}
-
-.hero__grid {
-  row-gap: var(--space-7);
+  padding-block: clamp(3rem, 2rem + 6vw, 8rem) clamp(3rem, 2rem + 4vw, 6rem);
 }
 
 .hero__label {
@@ -665,50 +655,9 @@ a:hover {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--live) 18%, transparent);
 }
 
-/* "At a glance" ledger on the right of the hero (wide screens only) */
-.glance {
-  display: none;
-  background: var(--surface);
-  border: var(--hairline);
-  padding: var(--space-5);
-}
-
-.glance dl {
-  margin: var(--space-3) 0 0;
-}
-
-.glance dl > div {
-  display: grid;
-  grid-template-columns: 6.5rem minmax(0, 1fr);
-  gap: var(--space-3);
-  padding-block: var(--space-3);
-  border-top: var(--hairline);
-}
-
-.glance dt {
-  font-family: var(--font-mono);
-  font-size: var(--step--2);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding-top: 0.15em;
-}
-
-.glance dd {
-  margin: 0;
-  font-size: var(--step--1);
-  line-height: 1.5;
-}
-
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   .hero__content {
-    grid-column: 1 / span 7;
-  }
-
-  .glance {
-    display: block;
-    grid-column: 9 / -1;
-    align-self: center;
+    grid-column: 1 / span 10;
   }
 }
 
@@ -744,7 +693,7 @@ a:hover {
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--accent-num);
+  color: var(--accent);
 }
 
 .proof__num .arrow {
@@ -1008,24 +957,6 @@ a:hover {
   margin-top: var(--space-4);
 }
 
-/* Line rows up across the two columns: frame, meta, title, result, stack, link */
-@supports (grid-template-rows: subgrid) {
-  @media (min-width: 900px) {
-    .case-card {
-      display: grid;
-      grid-row: span 6;
-      grid-template-rows: subgrid;
-      row-gap: 0;
-      align-content: start;
-    }
-
-    .case-card .arrow-link {
-      align-self: start;
-      justify-self: start;
-    }
-  }
-}
-
 /* ==========================================================================
    Automation cards
    ========================================================================== */
@@ -1068,7 +999,7 @@ a:hover {
   font-weight: 500;
   font-size: var(--step-3);
   line-height: 1;
-  color: var(--accent-num);
+  color: var(--accent);
   letter-spacing: -0.02em;
 }
 
@@ -1097,23 +1028,6 @@ a:hover {
 .auto-card .stack-line {
   margin-top: auto;
   padding-top: var(--space-2);
-}
-
-/* Line rows up across the three cards: status, name, summary, figure, details, stack */
-@supports (grid-template-rows: subgrid) {
-  @media (min-width: 900px) {
-    .auto-card {
-      display: grid;
-      grid-row: span 6;
-      grid-template-rows: subgrid;
-      row-gap: var(--space-4);
-    }
-
-    .auto-card .stack-line {
-      margin-top: 0;
-      align-self: end;
-    }
-  }
 }
 
 /* ==========================================================================
@@ -1614,7 +1528,7 @@ a:hover {
 }
 
 .metric__after {
-  color: var(--accent-num);
+  color: var(--accent);
 }
 
 .metric__unit {

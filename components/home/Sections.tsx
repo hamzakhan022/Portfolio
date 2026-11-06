@@ -3,7 +3,7 @@ import { BrowserFrame } from '@/components/BrowserFrame';
 import { CountUp } from '@/components/CountUp';
 import { SectionHead } from '@/components/SectionHead';
 import { StatusBadge } from '@/components/StatusBadge';
-import { experience, glance, hero, principles, proof } from '@/content/home';
+import { experience, hero, principles, proof } from '@/content/home';
 import { automation, caseStudies, moreWork } from '@/content/projects';
 import { site } from '@/content/site';
 import { testimonials } from '@/content/testimonials';
@@ -11,7 +11,7 @@ import { testimonials } from '@/content/testimonials';
 export function Hero() {
   return (
     <section className="hero container" aria-labelledby="hero-title">
-      <div className="grid hero__grid">
+      <div className="grid">
         <div className="hero__content">
           <p className="label hero__label">{hero.label}</p>
           <h1 className="hero__title" id="hero-title">
@@ -33,17 +33,6 @@ export function Hero() {
             {site.availability}
           </p>
         </div>
-        <aside className="glance" aria-label="At a glance">
-          <p className="label">At a glance</p>
-          <dl>
-            {glance.map((g) => (
-              <div key={g.term}>
-                <dt>{g.term}</dt>
-                <dd>{g.detail}</dd>
-              </div>
-            ))}
-          </dl>
-        </aside>
       </div>
     </section>
   );
@@ -281,7 +270,7 @@ export function Testimonials() {
 
 export function Contact() {
   const rows: { label: string; value: string; href: string; download?: string; external?: boolean }[] = [
-    { label: 'LinkedIn', value: site.linkedinHandle, href: site.linkedin, external: true },
+    { label: 'LinkedIn', value: 'muhammad-ameer-hamza', href: site.linkedin, external: true },
     { label: 'GitHub', value: 'hamzakhan022', href: site.github, external: true },
     { label: 'CV', value: 'Download CV (PDF)', href: site.cv, download: site.cvDownloadName },
   ];
